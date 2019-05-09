@@ -1,0 +1,26 @@
+amexio-grid-item1{
+    border: 1px dotted;
+}
+
+.grid-item-split-horizonatl-center{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 10px;
+    margin: -5px;
+  }
+  
+  .grid-item-split-horizonatl-center i{
+    transform: rotate(270deg);
+  }
+  
+  .grid-item-split-vertical-center{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 7.5px;
+    margin: -5px;
+  }
+  

@@ -1,0 +1,15 @@
+
+<div style="height: 100%; width: 100%; position: relative; display: flex;justify-content: center;"
+  [ngStyle]="{ 'flex-direction': (splitPositionDirection) ? splitPositionDirection: '' }">
+  <div *ngIf="splitPosition" [class]="splitPositionClass">
+    <i *ngIf="(splitPosition && splitPosition === 'left')" class="fa fa-caret-right" aria-hidden="true"></i>
+    <i *ngIf="(splitPosition && splitPosition === 'right')" class="fa fa-caret-left" aria-hidden="true"></i>
+    <i *ngIf="(splitPosition && splitPosition === 'bottom')" class="fa fa-caret-right" aria-hidden="true"></i>
+    <i *ngIf="(splitPosition && splitPosition === 'top')" class="fa fa-caret-right" aria-hidden="true"></i>
+  </div>
+  <div style="flex-grow: 1; ">
+    {{splitPosition}}
+    <ng-content></ng-content>
+  </div>
+
+</div>
