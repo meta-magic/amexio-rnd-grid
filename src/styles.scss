@@ -21,8 +21,16 @@ amexio-grid-item1{
 }
 
 .griditemcontainer-header{
-    padding: 5px;
+    padding: 10px;
     border-bottom: 1px solid lightgray;
+    background-color: var(--componentHeaderBGColor);
+    color: var(--componentHeaderFontColor);
+    font-size: 15px;
+}
+
+.collapsibleicon{
+    background-color: var(--componentHeaderFontColor);
+    color: var(--componentHeaderBGColor);
 }
 
 .griditemcontainer-header-collapsed{
