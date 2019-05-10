@@ -1,7 +1,7 @@
 <div style="height: 100%; width: 100%; position: relative;" [class]="cPosition">
 
   <div *ngIf="(hcEnabled)" [class]="hcPosition" [ngStyle]="{transform: iconDegree}" (click)="toggle()">
-    <div class="collapsibleicon"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+    <i class="fa fa-caret-right" aria-hidden="true"></i>
   </div>
   <div *ngIf="(vcEnabled)" [class]="vcPosition" (click)="toggle()">
     <i class="fa fa-caret-right" aria-hidden="true" [ngStyle]="{transform: iconDegree}"></i>
