@@ -1,7 +1,17 @@
-<amexio-layout-grid1  [layout]="'LayoutSample1'">
-  <amexio-grid-item1 [split-position]="'bottom'" [name]="'gridheader'">Header</amexio-grid-item1>
+<amexio-layout-grid1 [layout]="'borderlayout'">
+  <amexio-grid-item1 [vc-enabled]="true" [vc-direction]="'top'" [name]="'north'">NORTH BLOCK</amexio-grid-item1>
+  <amexio-grid-item1 [hc-enabled]="true" [hc-direction]="'left'" [name]="'west'">WEST BLOCK</amexio-grid-item1>
+  <amexio-grid-item1 [name]="'center'">CENTER BLOCK</amexio-grid-item1>
+  <amexio-grid-item1 [hc-enabled]="true" [hc-direction]="'right'" [name]="'east'">EAST BLOCK</amexio-grid-item1>
+  <amexio-grid-item1 [vc-enabled]="true" [vc-direction]="'bottom'" [name]="'south'">SOUTH BLOCK</amexio-grid-item1>
+</amexio-layout-grid1>
+
+
+
+<!-- <amexio-layout-grid1  [layout]="'LayoutSample1'">
   <amexio-grid-item1 [split-position]="'right'"  [name]="'gridmenu'">Menu</amexio-grid-item1>
+  <amexio-grid-item1 [split-position]="'bottom'" [name]="'gridheader'">Header</amexio-grid-item1>
   <amexio-grid-item1  [name]="'gridmain'">Main </amexio-grid-item1>
   <amexio-grid-item1  [split-position]="'left'" [name]="'gridright'">Right</amexio-grid-item1>
   <amexio-grid-item1  [split-position]="'top'" [name]="'gridfooter'">Footer</amexio-grid-item1>
-</amexio-layout-grid1>
+</amexio-layout-grid1> -->

@@ -20,6 +20,7 @@ import { AmexioGridItemComponent1 } from './griditem.component';
 
 import { GridConstants } from 'amexio-ng-extensions';
 import { AmexioGridLayoutService1 } from './amexiogridlayoutservice.service';
+import { stringify } from '@angular/core/src/util';
 
 @Component({
   selector: 'amexio-layout-grid1',
@@ -97,9 +98,59 @@ export class AmexioGridComponent1 implements AfterContentInit, OnInit {
     }
   }
 
+  itemCollectionMap : AmexioGridItemComponent1[];
+
   ngAfterContentInit() {
     this.itemCollection = this.queryItem.toArray();
+    debugger;
+    this.itemCollectionMap = [];
+
+    this.itemCollection.forEach((cmp) => {
+      this.itemCollectionMap[cmp.name] = cmp;
+      return cmp.onToggle.subscribe((cmpObject: any) => this.subscribeToGridItemEvents(cmpObject))
+    });
   }
+  gridtemplatecolumnconfig : string = "";
+  subscribeToGridItemEvents(cmp: AmexioGridItemComponent1) {
+    this.gridtemplatecolumnconfig = "";
+    debugger;
+    let rowConfig = [];
+    const layouts : any[] = this._gridlayoutService.getLayoutData(this.layout).desktop;
+    layouts.forEach((rows: string[]) =>{
+      rows.forEach((name: string) =>{
+        
+        if(name === cmp.name && rowConfig.length === 0){
+          rowConfig = rows;
+        }
+      });
+    });
+    debugger;
+    let gtcc : string;
+    let colConfig = [];
+    let prevConfig = "";
+    rowConfig.forEach((name: string) =>{
+      let cmp = this.itemCollectionMap[name];
+      if(cmp.showContent){
+        //this.gridtemplatecolumnconfig = this.gridtemplatecolumnconfig + " 1fr "
+        colConfig.push(" 1fr ");
+      } else if(cmp.name === prevConfig){
+        colConfig[colConfig.length-1] = " 1fr ";
+        colConfig.push(" 1fr ");
+      } else
+      {
+        //this.gridtemplatecolumnconfig = this.gridtemplatecolumnconfig + " auto "
+        colConfig.push(" auto ");
+      }
+      prevConfig = cmp.name;
+    });
+    debugger;
+    colConfig.forEach((name : string)=>{
+      this.gridtemplatecolumnconfig = this.gridtemplatecolumnconfig + name;
+    })
+    console.log(this.gridtemplatecolumnconfig);
+  }
+
+
 
   dataCreation(deviceName: any[]): string {
     this.containerClass = '';
@@ -110,7 +161,6 @@ export class AmexioGridComponent1 implements AfterContentInit, OnInit {
   }
 
   cssGenreration(layoutData: any) {
-    debugger;
     this.colCount = layoutData.count;
     this.className = this.className + '' + layoutData.name;
     if (layoutData.desktop.length > 0) {

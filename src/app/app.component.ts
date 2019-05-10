@@ -13,10 +13,10 @@ export class AppComponent {
   gridDesktop : GridConfig1;
   constructor(private _gridlayoutService: AmexioGridLayoutService1){
 
-    this.gridDesktop = new GridConfig1('LayoutSample1', GridConstants.Desktop)
-    .addlayout(["gridmenu", "gridheader", "gridheader", "gridheader", "gridheader", "gridheader"])
-    .addlayout(["gridmenu", "gridmain", "gridmain", "gridmain", "gridright", "gridright"])
-    .addlayout(["gridfooter", "gridfooter", "gridfooter", "gridfooter", "gridright", "gridright"]);
+    this.gridDesktop = new GridConfig1('borderlayout', GridConstants.Desktop)
+    .addlayout(["west", "north", "north", "north", "north", "north"])
+    .addlayout(["west", "center", "center", "center", "center", "east"])
+    .addlayout(["west", "south", "south", "south", "south", "east"]);
 
   this._gridlayoutService.createLayout(this.gridDesktop);
 
