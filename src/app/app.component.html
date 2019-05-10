@@ -4,32 +4,44 @@
     <hr />
     <amexio-layout-grid1 [layout]="'borderlayoutdemo1'">
       <amexio-grid-item1 [title]="'North'" [vc-enabled]="true" [vc-direction]="'top'" [name]="'north'">
-          NORTH BLOCK
+          <amexio-panel [header]="false" [height]="'100%'" [expanded]="false">
+             CUSTOMER DEMOGRAPHICS.. + PRODUCTS...
+            </amexio-panel>
       </amexio-grid-item1>
       <amexio-grid-item1 [title]="'West'" [hc-enabled]="true" [hc-direction]="'left'" [name]="'west'">
-          WEST BLOCK
+          <amexio-panel [header]="false" [height]="'100%'" [expanded]="false">
+            WORKFLOW BUTTONS ..     
+          </amexio-panel>
       </amexio-grid-item1>
       <amexio-grid-item1 [title]="'Center'" [name]="'center'">
-        CENTER BLOCK
+          <amexio-panel [header]="false" [height]="'100%'" [expanded]="false">
+              TAB LAYOUT CONTENT.. <br/>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+              been the industry's standard dummy
+              text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+              to
+              make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic
+              typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+              release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+              publishing
+              software like Aldus PageMaker including versions of Lorem Ipsum.
+            </amexio-panel>
       </amexio-grid-item1>
       <amexio-grid-item1 [title]="'East'" [hc-enabled]="true" [hc-direction]="'right'" [name]="'east'">
-          EAST BLOCK
+          <amexio-panel [header]="false" [height]="'100%'" [expanded]="false">
+              HELP CONTENT..
+            </amexio-panel>
       </amexio-grid-item1>
       <amexio-grid-item1 [title]="'South'" [vc-enabled]="true" [vc-direction]="'bottom'" [name]="'south'">
-          SOUTH BLOCK
+           <amexio-panel [header]="false" [height]="'100%'" [expanded]="false">
+              SUBMIT...
+            </amexio-panel>
       </amexio-grid-item1>
     </amexio-layout-grid1>
 
-    <br />
-    DEMO2
-    <hr />
-    <amexio-layout-grid1 [layout]="'borderlayoutdemo2'">
-      <amexio-grid-item1 [vc-enabled]="true" [vc-direction]="'top'" [name]="'north'">NORTH BLOCK</amexio-grid-item1>
-      <amexio-grid-item1 [hc-enabled]="true" [hc-direction]="'left'" [name]="'west'">WEST BLOCK</amexio-grid-item1>
-      <amexio-grid-item1 [name]="'center'">CENTER BLOCK</amexio-grid-item1>
-      <amexio-grid-item1 [hc-enabled]="true" [hc-direction]="'right'" [name]="'east'">EAST BLOCK</amexio-grid-item1>
-      <amexio-grid-item1 [vc-enabled]="true" [vc-direction]="'bottom'" [name]="'south'">SOUTH BLOCK</amexio-grid-item1>
-    </amexio-layout-grid1>
+     
   </amexio-body-ce>
 
 </amexio-card-ce>

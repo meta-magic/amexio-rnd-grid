@@ -16,6 +16,23 @@ amexio-grid-item1{
     width: 100%;
     position: relative;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.griditemcontainer-header{
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.griditemcontainer-header-collapsed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.griditemcontainer-header-collapsed label{
+    transform: rotate(270deg);
 }
 .grid-vc-towards-top{
     display: flex;

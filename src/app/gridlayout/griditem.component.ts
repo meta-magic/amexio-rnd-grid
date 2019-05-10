@@ -66,6 +66,7 @@ description : The name is for determining the name of item.
 
   showContent : boolean = true;
 
+  containerDirection :  string = "column";
   constructor() {
     this.iconDegreeData = [];
     this.iconDegreeData['vc-towards-top-true'] = "rotate(270deg)";
@@ -90,10 +91,12 @@ description : The name is for determining the name of item.
       this.hcPosition = "hc-towards-" + this.hcDirection;
       this.cPosition = "grid-" + this.hcPosition;
       this.iconDegree = this.iconDegreeData[this.hcPosition+'-'+this.showContent];
+      this.containerDirection = (this.showContent) ? "column" : "row";
     } else if (this.vcEnabled) {
       this.vcPosition = "vc-towards-" + this.vcDirection;
       this.cPosition = "grid-" + this.vcPosition;
       this.iconDegree = this.iconDegreeData[this.vcPosition+'-'+this.showContent];
+      this.containerDirection = "column";
     }
     
     

@@ -7,8 +7,13 @@
     <i class="fa fa-caret-right" aria-hidden="true" [ngStyle]="{transform: iconDegree}"></i>
   </div>
 
-  <div class="griditemcontainer" [ngStyle]="{display: showContent ? 'block':'none'}">
+  <div class="griditemcontainer"  [ngStyle]="{'flex-direction': containerDirection}" >
+    <div *ngIf="title" class="griditemcontainer-header" [ngClass]="{'griditemcontainer-header-collapsed': (!showContent && hcEnabled)}">
+      <label>{{title}}</label> 
+    </div>
+    <div class="griditemcontainer-body" [ngStyle]="{display: showContent ? 'block':'none'}">
       <ng-content></ng-content>
+    </div>
   </div>
 
 </div>
