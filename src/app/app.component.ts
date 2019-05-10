@@ -10,15 +10,23 @@ import { GridConstants } from 'amexio-ng-extensions';
 })
 export class AppComponent {
   title = 'gridlayoutdemo';
-  gridDesktop : GridConfig1;
-  constructor(private _gridlayoutService: AmexioGridLayoutService1){
+  gridDesktop1: GridConfig1;
+  gridDesktop2: GridConfig1;
 
-    this.gridDesktop = new GridConfig1('borderlayout', GridConstants.Desktop)
-    .addlayout(["west", "north", "north", "north", "north", "north"])
-    .addlayout(["west", "center", "center", "center", "center", "east"])
-    .addlayout(["west", "south", "south", "south", "south", "east"]);
+  constructor(private _gridlayoutService: AmexioGridLayoutService1) {
 
-  this._gridlayoutService.createLayout(this.gridDesktop);
+    this.gridDesktop1 = new GridConfig1('borderlayoutdemo1', GridConstants.Desktop)
+      .addlayout(["west", "north", "north", "north", "north", "east"])
+      .addlayout(["west", "center", "center", "center", "center", "east"])
+      .addlayout(["west", "south", "south", "south", "south", "east"]);
+
+    this.gridDesktop2 = new GridConfig1('borderlayoutdemo2', GridConstants.Desktop)
+      .addlayout(["north", "north", "north", "north", "north", "north"])
+      .addlayout(["west", "center", "center", "center", "center", "east"])
+      .addlayout(["south", "south", "south", "south", "south", "south"]);
+
+    this._gridlayoutService.createLayout(this.gridDesktop1);
+    this._gridlayoutService.createLayout(this.gridDesktop2);
 
   }
 }

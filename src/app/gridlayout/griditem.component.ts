@@ -44,7 +44,7 @@ description : The name is for determining the name of item.
 
 
 
-  
+  @Input('title') title : string;
 
   @Input('hc-enabled') hcEnabled: boolean;
 

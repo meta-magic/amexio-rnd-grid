@@ -6,6 +6,7 @@ import { AmexioWidgetModule } from  'amexio-ng-extensions';
 import { AmexioGridComponent1 } from './gridlayout/grid.component';
 import { AmexioGridItemComponent1 } from './gridlayout/griditem.component';
 import { AmexioGridLayoutService1 } from './gridlayout/amexiogridlayoutservice.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AmexioGridLayoutService1 } from './gridlayout/amexiogridlayoutservice.s
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AmexioWidgetModule
   ],
   providers: [AmexioGridLayoutService1],

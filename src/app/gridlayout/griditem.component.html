@@ -1,37 +1,14 @@
-<div style="height: 100%; width: 100%; position: relative;"
-     [class]="cPosition">
+<div style="height: 100%; width: 100%; position: relative;" [class]="cPosition">
 
-  <div *ngIf="(hcEnabled)" [class]="hcPosition"  [ngStyle]="{transform: iconDegree}"  (click)="toggle()">
+  <div *ngIf="(hcEnabled)" [class]="hcPosition" [ngStyle]="{transform: iconDegree}" (click)="toggle()">
     <i class="fa fa-caret-right" aria-hidden="true"></i>
   </div>
-  <div *ngIf="(vcEnabled)" [class]="vcPosition">
-    <i class="fa fa-caret-right" aria-hidden="true" [ngStyle]="{transform: iconDegree}" (click)="toggle()"></i>
+  <div *ngIf="(vcEnabled)" [class]="vcPosition" (click)="toggle()">
+    <i class="fa fa-caret-right" aria-hidden="true" [ngStyle]="{transform: iconDegree}"></i>
   </div>
 
-  <div style="flex-grow: 1;" [ngStyle]="{display: showContent ? 'block':'none'}">
-    
-    <!-- {{cPosition}}
-    <span *ngIf="hcEnabled">hc - {{hcEnabled}} -- {{hcDirection}} -- {{hcPosition}} <br /></span>
-    <span *ngIf="vcEnabled">vc - {{vcEnabled}} -- {{vcDirection}} -- {{vcPosition}} <br /></span> -->
-    <ng-content></ng-content>
+  <div class="griditemcontainer" [ngStyle]="{display: showContent ? 'block':'none'}">
+      <ng-content></ng-content>
   </div>
 
 </div>
-
-
-<!--  
-<div style="height: 100%; width: 100%; position: relative; display: flex;justify-content: center;"
-  [ngStyle]="{ 'flex-direction': (splitPositionDirection) ? splitPositionDirection: '' }">
-  <div *ngIf="splitPosition" [class]="splitPositionClass">
-    <i *ngIf="(splitPosition && splitPosition === 'left')" class="fa fa-caret-right" aria-hidden="true"></i>
-    <i *ngIf="(splitPosition && splitPosition === 'right')" class="fa fa-caret-left" aria-hidden="true"></i>
-    <i *ngIf="(splitPosition && splitPosition === 'bottom')" class="fa fa-caret-right" aria-hidden="true"></i>
-    <i *ngIf="(splitPosition && splitPosition === 'top')" class="fa fa-caret-right" aria-hidden="true"></i>
-  </div>
-  <div style="flex-grow: 1; ">
-    <span *ngIf="hcEnabled">{{hcEnabled}} -- {{hcDirection}} <br/></span>
-    <span *ngIf="vcEnabled">{{vcEnabled}} -- {{vcDirection}} <br/></span>
-    <ng-content></ng-content>
-  </div>
-
-</div> -->
